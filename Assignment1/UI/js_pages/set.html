@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Set Operations</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<!--<script src='../js/set_py.js'></script>!-->
+
+<style>
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+}
+.login-form form {
+    border-radius: 25px;        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.input-group-addon .fa {
+    font-size: 18px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.bottom-action {
+  	font-size: 14px;
+}
+.register {
+    border-radius: 25px;      
+    width: 340px;
+    margin: 50px auto;  
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+</style>
+</head>
+<body>
+<div class="login-form">
+    <form>
+        <h2 class="text-center">Fill in the inputs</h2>
+        <h1 class="text-center"><i class="fas fa-calculator" aria-hidden="true"></i></h1><br>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-object-group"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="set1" class="form-control" placeholder="Set 1" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        <i class="fas fa-object-group"></i>
+                    </span>                    
+                </div>
+                <input id="set2" class="form-control" placeholder="Set  2" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+            <select class="form-control" id="operation" placeholder="Select Operation">
+              <option>Union</option>
+              <option>Intersection</option>
+              <option>Minus</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" onclick="pass_op()">Submit</button>
+        </div>
+        <input id="result" class="form-control" type="text" placeholder="Result is displayed here" readonly>        
+    </form>
+    <p class="text-center small">To go back to home, <a href="../home.html">Click Here</a>.</p>
+</div>
+</body>
+<script>
+    function pass_op(){
+        var op = $("#operation").val();
+        var operation = op.toLowerCase();
+        console.log(operation)
+        set_op(operation)
+    }
+    function set_op(operation)
+    {
+        var inp1=$("#set1").val();
+        var inp2=$("#set2").val();
+        console.log(inp1, inp2)
+        console.log('http://127.0.0.1:3000/' + operation)
+        var jsonstr = "{\"A\":" + "[" + inp1 + "]," + "\"B\":[" + inp2 + "]}" 
+        console.log(jsonstr);
+        $.ajax({
+            url : 'http://127.0.0.1:3000/' + operation,
+            type : 'POST',
+            cors : true,
+            headers: {
+            'Access-Control-Allow-Origin': '*',
+            },
+            contentType: 'application/json',
+            data : jsonstr,
+            success : function(data)
+            {
+                console.log(data.result);
+                $("#result").val(data.result);
+            }
+         });
+    }
+    </script>
+</script>
+</html>

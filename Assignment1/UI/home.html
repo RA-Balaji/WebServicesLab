@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Home for APIs</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/pricing.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Web Services Lab</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-blue" class="nav-link active" href="#">Python</a>
+        <a class="p-2 text-dark" href="./js_home.html">Javascript</a>
+        <a class="p-2 text-dark" href="#">PHP</a>
+      </nav>
+    </div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">API List</h1>
+      <p class="lead">List of APIs created using Python</p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">1. Date difference</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class="fa fa-calendar-alt"></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Calculates Date difference</li>
+              <li>Precision up to Seconds</li>
+              <li>Enter Start time and End time</li>
+              <li>Difference will be calcutated</li>
+            </ul>
+            <button type="button" id="datebtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">2. Set Operations</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-calculator'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Peforms Set Operations</li>
+              <li>Union Operation</li>
+              <li>Intersection Operation</li>
+              <li>Subtracction Operation</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-primary" id="setbtn">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">3. Matrix</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class="fas fa-list"></i></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Performs Matrix Operations</li>
+              <li>Transpose</li>
+              <li>Upper diagonal</li>
+              <li>Lower diagonal</li>
+            </ul>
+            <button type="button" id="matbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">4. Currency Words</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-rupee-sign'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Converts number currency to words</li>
+              <li>Enter data as number</li>
+              <li>Receive output as words</li>
+              <li> </li>
+            </ul>
+            <button type="button" id="currbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">5. RSA encryption</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-lock'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Encrypts data using RSA</li>
+              <li>Public key, private key generated</li>
+              <li>Decryption using private key</li>
+              <br>
+            </ul>
+            <button type="button" id="rsabtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">6. Checksum</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fa fa-check'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Generates checksum</li>
+              <li>MD5 checksum is used</li>
+              <li>Enter a alphanumeric string</li>
+              <br>
+            </ul>
+            <button type="button" id="checkbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">7. Bar Code</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-barcode'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Generated barcode for a given alphanumeric string</li>
+              <li>Code128 type is used to support alphanumeric</li>
+            </ul>
+            <button type="button" id="barbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">8. QR Code</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-qrcode'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Alphanumeric String must be entered</li>
+              <li>Image is generated for corresponding String</li>
+            </ul>
+            <button type="button" id="qrbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">9. OTP</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fa fa-eye-slash'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Random OTP will be generated</li>
+              <li>Otp size is variable</li>
+              <li>Phone and email support</li>
+              <li>Help center access</li>
+            </ul>
+            <button type="button" id="otpbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-deck mb-3 text-center" style="width: 34%;">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">10. CAPTCHA</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-sync'></i></small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Generates Captcha</li>
+              <li>Provides the corresponding text</li>
+              <li>Provides the corresponding image</li>
+            </ul>
+            <button type="button" id="capbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      document.getElementById("setbtn").onclick = function () {
+          location.href = "./pages/set.html";
+      };
+      document.getElementById("currbtn").onclick = function () {
+          location.href = "./pages/words.html";
+      };
+      document.getElementById("checkbtn").onclick = function () {
+          location.href = "./pages/checksum.html";
+      };
+      document.getElementById("qrbtn").onclick = function () {
+          location.href = "./pages/qr.html";
+      };
+      document.getElementById("datebtn").onclick = function () {
+          location.href = "./pages/date.html";
+      };
+      document.getElementById("barbtn").onclick = function () {
+          location.href = "./pages/barcode.html";
+      };
+      document.getElementById("otpbtn").onclick = function () {
+          location.href = "./pages/otp.html";
+      };
+      document.getElementById("capbtn").onclick = function () {
+          location.href = "./pages/captcha.html";
+      };
+      document.getElementById("matbtn").onclick = function () {
+          location.href = "./pages/matrix.html";
+      };
+      document.getElementById("rsabtn").onclick = function () {
+          location.href = "./pages/rsa.html";
+      };
+  </script>
+  </body>
+</html>
