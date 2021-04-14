@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Log2 Calculator</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<!--<script src='../js/set_py.js'></script>!-->
+
+<style>
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+}
+.login-form form {
+    border-radius: 25px;        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.input-group-addon .fa {
+    font-size: 18px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.bottom-action {
+  	font-size: 14px;
+}
+.register {
+    border-radius: 25px;      
+    width: 340px;
+    margin: 50px auto;  
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+</style>
+</head>
+<body>
+<div class="login-form">
+    <form>
+        <h2 class="text-center">Fill in the inputs</h2>
+        <h1 class="text-center"><i class="fas fa-square-root-alt" aria-hidden="true"></i></h1><br>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-subscript"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="inp1" class="form-control" placeholder="Enter 2 numbers (Ex: 1,2)" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        GCF
+                    </span>                    
+                </div>
+                <input id="result1" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        LCM
+                    </span>                    
+                </div>
+                <input id="result2" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-superscript"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="inp2" class="form-control" placeholder="Enter Number" required="required">
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-superscript"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="inp3" class="form-control" placeholder="Enter 'n'" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        <i class="fas fa-equals"></i>
+                    </span>                    
+                </div>
+                <input id="result3" class="form-control" placeholder="Square Root" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        <i class="fas fa-equals"></i>
+                    </span>                    
+                </div>
+                <input id="result4" class="form-control" placeholder="Cube Root" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        <i class="fas fa-equals"></i>
+                    </span>                    
+                </div>
+                <input id="result5" class="form-control" placeholder="Nth root" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" onclick="call_api()">Submit</button>
+        </div>  
+    </form>
+    <p class="text-center small">To go back to home, <a href="../home.html">Click Here</a>.</p>
+</div>
+</body>
+<script>
+
+    function call_api()
+    {
+        var inp1=$("#inp1").val();
+        var inp2=$("#inp2").val();
+        var inp3=$("#inp3").val();
+        console.log(inp1)
+        console.log('http://127.0.0.1:3000/Q3')
+        var jsonstr = "{\"inp1\":"   + "[" + inp1 + "]" + "," + "\"num2\":" +inp2  + ","+ "\"n\":"+ inp3 +"}"
+        console.log(jsonstr);
+        $.ajax({
+            url : 'http://127.0.0.1:3000/Q3',
+            type : 'POST',
+            cors : true,
+            headers: {
+            'Access-Control-Allow-Origin': '*',
+            },
+            contentType: 'application/json',
+            data : jsonstr,
+            success : function(data)
+            {
+                console.log(data.GCD);
+                $("#result1").val(data.GCD);
+                $("#result2").val(data.LCM);
+                $("#result3").val(data.Squareroot);
+                $("#result4").val(data.Cuberoot);
+                $("#result5").val(data.nroot);
+            }
+         });
+    }
+    </script>
+</script>
+</html>

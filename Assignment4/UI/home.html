@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    
+    <title>Assignment - 4 Home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/pricing/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./bootstrap/pricing.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <h5 class="my-0 mr-md-auto font-weight-normal">Web Services Lab</h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-blue" class="nav-link active" href="#">Python</a>
+        <a class="p-2 text-dark" href="./jshome.html">Javascript</a>
+        <a class="p-2 text-dark" href="#">PHP</a>
+      </nav>
+    </div>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">API List</h1>
+      <p class="lead">List of APIs created using Python</p>
+    </div>
+
+    <div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">1. Registration Link</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class="fa fa-bolt"></i></small></h1>
+            <p>Email Registration link to email id given by the user</p>
+            <button type="button" id="elecbtn" class="btn btn-lg btn-block btn-primary">Click Here</button>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal">2. Send OTP</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><small class="text-muted"><i class='fas fa-calculator'></i></small></h1>
+            <p>OTP is sent to a mobile number and an email</p>
+            <button type="button" class="btn btn-lg btn-block btn-primary" id="q2btn">Click Here</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      document.getElementById("elecbtn").onclick = function () {
+          location.href = "./pages/q1.html";
+      };
+      document.getElementById("q2btn").onclick = function () {
+          location.href = "./pages/q2.html";
+      };
+      document.getElementById("q3btn").onclick = function () {
+          location.href = "./pages/q3.html";
+      };
+      document.getElementById("q4btn").onclick = function () {
+          location.href = "./pages/q4.html";
+      };
+      document.getElementById("q5btn").onclick = function () {
+          location.href = "./pages/q5.html";
+      };
+  </script>
+  </body>
+</html>
