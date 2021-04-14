@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Log3 Calculator</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<!--<script src='../js/set_py.js'></script>!-->
+
+<style>
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+}
+.login-form form {
+    border-radius: 25px;        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+.input-group-addon .fa {
+    font-size: 18px;
+}
+.btn {        
+    font-size: 15px;
+    font-weight: bold;
+}
+.bottom-action {
+  	font-size: 14px;
+}
+.register {
+    border-radius: 25px;      
+    width: 340px;
+    margin: 50px auto;  
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+</style>
+</head>
+<body>
+<div class="login-form">
+    <form>
+        <h2 class="text-center">Fill in the inputs</h2>
+        <h4 class="text-center">Trignometry</h4><br>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-subscript"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="inp1" class="form-control" placeholder="Enter angle in degrees" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Sin
+                    </span>                    
+                </div>
+                <input id="sin" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Cos
+                    </span>                    
+                </div>
+                <input id="cos" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Tan
+                    </span>                    
+                </div>
+                <input id="tan" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Sec
+                    </span>                    
+                </div>
+                <input id="sec" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Cosec
+                    </span>                    
+                </div>
+                <input id="cosec" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Cot
+                    </span>                    
+                </div>
+                <input id="cot" class="form-control" placeholder="" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" onclick="call_api1()">Submit</button>
+        </div>  
+    </form>
+    <p class="text-center small">To go back to home, <a href="../home.html">Click Here</a>.</p>
+</div>
+<div class="login-form">
+    <form>
+        <h2 class="text-center">Fill in the inputs</h2>
+        <h4 class="text-center">Inverse Trignometry</h4><br><br>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fas fa-subscript"></span>
+                    </span>                    
+                </div>
+                <input type="text" id="inp2" class="form-control" placeholder="Enter Value" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Arcsin
+                    </span>                    
+                </div>
+                <input id="arcsin" class="form-control" placeholder="Arcsin" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Arccos
+                    </span>                    
+                </div>
+                <input id="arccos" class="form-control" placeholder="Arccos" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" >
+                        Arctan
+                    </span>                    
+                </div>
+                <input id="arctan" class="form-control" placeholder="Arctan" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block" onclick="call_api2()">Submit</button>
+        </div>  
+    </form>
+    <p class="text-center small">To go back to home, <a href="../home.html">Click Here</a>.</p>
+</div>
+</body>
+<script>
+
+    function call_api1()
+    {
+        var inp1=$("#inp1").val();
+        console.log(inp1)
+        console.log('http://127.0.0.1:5010/Q4/trig')
+        var jsonstr = "{\"angle\":"  + inp1 +"}"
+        console.log(jsonstr);
+        $.ajax({
+            url : 'http://127.0.0.1:5010/Q4/trig',
+            type : 'POST',
+            cors : true,
+            headers: {
+            'Access-Control-Allow-Origin': '*',
+            },
+            contentType: 'application/json',
+            data : jsonstr,
+            success : function(data)
+            {
+                console.log(data.difference);
+                $("#sin").val(data.sin);
+                $("#cos").val(data.cos);
+                $("#tan").val(data.tan);
+                $("#sec").val(data.sec);
+                $("#cosec").val(data.cosec);
+                $("#cot").val(data.cot);
+            }
+         });
+    }
+    function call_api2()
+    {
+        var inp2=$("#inp2").val();
+        console.log(inp1)
+        console.log('http://127.0.0.1:5010/Q4/inverse_trig')
+        var jsonstr = "{\"value\":"  + inp2 +"}"
+        console.log(jsonstr);
+        $.ajax({
+            url : 'http://127.0.0.1:5010/Q4/inverse_trig',
+            type : 'POST',
+            cors : true,
+            headers: {
+            'Access-Control-Allow-Origin': '*',
+            },
+            contentType: 'application/json',
+            data : jsonstr,
+            success : function(data)
+            {
+                console.log(data.difference);
+                $("#arcsin").val(data.arcsin);
+                $("#arccos").val(data.arccos);
+                $("#arctan").val(data.arctan);
+            }
+         });
+    }
+    </script>
+</script>
+</html>
